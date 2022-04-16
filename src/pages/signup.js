@@ -8,9 +8,9 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import { useState} from "react";
+import { useState } from "react";
 
-
+//FOR THE STYLE
 const style = {
   linkStyle: {
     cursor: "pointer",
@@ -18,9 +18,41 @@ const style = {
   },
 };
 
+//EXPORT
 export default function Signup() {
+
+  //CONSTANTS
   const router = useRouter();
+  const iState = {
+    email: "",
+    pass: "",
+    conpass: "",
+  }
+
+  //GETTING THE USER INPUT
+  const [state, setState] = useState(iState);
+  const hChange = (prop) => (e) => {
+    setState((prevItem) => ({
+      ...prevItem,
+      [prop]: e.target.value,
+    }))
+    console.log(state);
+  };
+
+  //VERIFYING USER INPUT
+  const btnCreate = () => {
+    if(state.pass === state.conpass)
+    {
+      console.log("Account created successfully!");
+      router.push("/login");
+    }
+    else
+    {
+      console.log("Password did not match!");
+    }
+  }
   
+  //RETURN TYPE
   return (
     <Box
       sx={{
@@ -51,6 +83,7 @@ export default function Signup() {
           placeholder="Email address"
           name="email"
           type="email"
+          onChange = {hChange("email")}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -69,6 +102,7 @@ export default function Signup() {
           placeholder="Password"
           name="password"
           type="password"
+          onChange={hChange("pass")}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -88,6 +122,7 @@ export default function Signup() {
           placeholder="Confirm Password"
           name="Confirm password"
           type="password"
+          onChange={hChange("conpass")}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -102,7 +137,7 @@ export default function Signup() {
           }}
           sx={{ marginTop: "12px" }}
         />
-        <Button variant="contained" sx={{ marginTop: "12px" }}>
+        <Button variant="contained" sx={{ marginTop: "12px" }} onClick = {btnCreate}>
           Create
         </Button>
 

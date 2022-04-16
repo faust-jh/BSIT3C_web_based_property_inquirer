@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { useState } from "react";
 
+//FOR THE STYLE
 const style = {
   linkStyle: {
     cursor: "pointer",
@@ -18,17 +19,57 @@ const style = {
   },
 };
 
+//EXPORT
 export default function Login() {
+
+  //CONSTANTS
   const router = useRouter();
   const iState = {
     email: "",
     pass: "",
   };
-  const [state, setState] = useState(iState);
 
+  //FOR THE VARIABLES
+  //GETTING INFORMATION FROM THE USER
+  const [state, setState] = useState(iState);
+  const hChange = (prop) => (e) => {
+    setState((prevItem) => ({
+      ...prevItem,
+      [prop]: e.target.value,
+    }))
+    console.log(state);
+  };
+
+  //CHECKING THE USER INPUTS
+  const btnLogin = () => {
+    const admin = "admin";
+    const adminpassword = "adminpass";
+
+    if(state.email === admin && state.pass === adminpassword)
+    {
+      console.log("LOGGED IN SUCCESFULLY");
+      router.push("/dashboard");
+    }
+    else if(state.email === admin)
+    {
+      console.log("Wrong Password");
+    }
+    else if(state.pass === adminpassword)
+    {
+      console.log("Wrong Email/Username");
+    }
+    else 
+    {
+      console.log("Wrong Credentials");
+    }
+  };
+
+  //FUNCTION FOR GOING TO THE SIGNUP PAGE
   const gotoSignup = () => {
     router.push("/signup");
   };
+
+  //THE DISPLAY
   return (
     <Box
       sx={{
@@ -59,6 +100,7 @@ export default function Login() {
           placeholder="Email address"
           name="email"
           type="email"
+          onChange={hChange("email")}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -77,6 +119,7 @@ export default function Login() {
           placeholder="Password"
           name="password"
           type="password"
+          onChange={hChange("pass")}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -91,7 +134,7 @@ export default function Login() {
           }}
           sx={{ marginTop: "12px" }}
         />
-        <Button variant="contained" sx={{ marginTop: "12px" }}>
+        <Button variant="contained" sx={{ marginTop: "12px" }} onClick={btnLogin}>
           Login
         </Button>
 
