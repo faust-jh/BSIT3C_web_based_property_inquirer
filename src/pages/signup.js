@@ -5,6 +5,7 @@ import {
   TextField,
   Typography,
   InputAdornment,
+  Snackbar,
 } from "@mui/material";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -17,6 +18,7 @@ const style = {
     color: "#4287f5",
   },
 };
+
 
 //EXPORT
 export default function Signup() {
@@ -39,15 +41,51 @@ export default function Signup() {
     console.log(state);
   };
 
+  //FOR THE SNACKBAR 
+  const [message, setMessage] = useState("");
+  const [open, setOpen] = useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   //VERIFYING USER INPUT
   const btnCreate = () => {
-    if(state.pass === state.conpass)
+    if(state.pass === "" && state.pass === "" && state.conpass === "")
     {
+      setMessage("Please fill up the fields!");
+      setOpen(true);
+      console.log("Please fill up the fields");
+    }
+    else if (state.email === "")
+    {
+      setMessage("Please enter email/username");
+      setOpen(true);
+      console.log("Please enter email/username");
+    }
+    else if(state.pass === "")
+    {
+      setMessage("Please enter password");
+      setOpen(true);
+      console.log("Please enter password");
+    }
+    else if(state.conpass === "")
+    {
+      setMessage("Please confirm your password");
+      setOpen(true);
+      console.log("Please confirm your password");
+    }
+    else if(state.pass === state.conpass)
+    {
+      setMessage("Account created successfully!");
+      setOpen(true);
+      setMessage
       console.log("Account created successfully!");
       router.push("/login");
     }
     else
     {
+      setMessage("Password did not match!");
+      setOpen(true);
       console.log("Password did not match!");
     }
   }
@@ -153,6 +191,14 @@ export default function Signup() {
           </Typography>
         </Box>
       </Paper>
+
+      
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "center"}}
+        open={open}
+        onClose={handleClose}
+        message={message}
+      />
     </Box>
   );
 }

@@ -6,6 +6,7 @@ import {
   TextField,
   Typography,
   InputAdornment,
+  Snackbar,
 } from "@mui/material";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -29,6 +30,13 @@ export default function Login() {
     pass: "",
   };
 
+  //FOR THE SNACKBAR 
+  const [message, setMessage] = useState("");
+  const [open, setOpen] = useState(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   //FOR THE VARIABLES
   //GETTING INFORMATION FROM THE USER
   const [state, setState] = useState(iState);
@@ -47,19 +55,27 @@ export default function Login() {
 
     if(state.email === admin && state.pass === adminpassword)
     {
+      setMessage("Successfully logged in!");
+      setOpen(true);
       console.log("LOGGED IN SUCCESFULLY");
       router.push("/dashboard");
     }
     else if(state.email === admin)
     {
+      setMessage("Wrong Password");
+      setOpen(true);
       console.log("Wrong Password");
     }
     else if(state.pass === adminpassword)
     {
+      setMessage("Wrong Email/Username");
+      setOpen(true);
       console.log("Wrong Email/Username");
     }
     else 
     {
+      setMessage("Wrong Credentials");
+      setOpen(true);
       console.log("Wrong Credentials");
     }
   };
@@ -150,6 +166,13 @@ export default function Login() {
           </Typography>
         </Box>
       </Paper>
+
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "center"}}
+        open={open}
+        onClose={handleClose}
+        message={message}
+      />
     </Box>
   );
 }
