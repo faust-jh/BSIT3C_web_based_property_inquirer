@@ -11,6 +11,7 @@ import {
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useState } from "react";
+import design from "../styles/designs";
 
 //FOR THE STYLE
 const style = {
@@ -98,7 +99,7 @@ export default function Login() {
       }}
     >
       <Box>
-        <Typography variant="h3" sx={{ fontFamily: "Segoe UI Symbol" }}>
+        <Typography variant="h4" sx={{ fontFamily: "Oswald" }}>
           Login to Your Account
         </Typography>
       </Box>
@@ -150,7 +151,7 @@ export default function Login() {
           }}
           sx={{ marginTop: "12px" }}
         />
-        <Button variant="contained" sx={{ marginTop: "12px" }} onClick={btnLogin}>
+        <Button variant="contained" sx={{ ...design.button1, marginTop: "12px" }} onClick={btnLogin}>
           Login
         </Button>
 
@@ -168,7 +169,7 @@ export default function Login() {
       </Paper>
 
       <Snackbar
-        anchorOrigin={{ vertical: "top", horizontal: "center"}}
+        anchorOrigin={{ vertical: "bottom", horizontal: "left"}}
         open={open}
         onClose={handleClose}
         message={message}
