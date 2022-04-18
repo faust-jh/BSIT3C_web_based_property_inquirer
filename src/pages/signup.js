@@ -9,10 +9,10 @@ import {
   Alert,
 } from "@mui/material";
 import { useRouter } from "next/router";
-import Image from "next/image";
 import { useState } from "react";
 import design from "../styles/designs";
 import Head from "next/head";
+import Image from "next/image";
 
 //FOR THE STYLE
 const style = {
@@ -131,7 +131,7 @@ export default function Signup() {
       <Head>
          <title> Register </title>
       </Head>
-      
+
       <Box>
         <Typography variant="h4" sx={{ fontFamily: "Oswald" }}>
           Create New Account
@@ -221,7 +221,7 @@ export default function Signup() {
           </Typography>
         </Box>
       </Paper>
-
+      <img src = ".images/background1.jpg" alt= "" />
       
       <Snackbar
         anchorOrigin={{ vertical: "bottom", horizontal: "left"}}
