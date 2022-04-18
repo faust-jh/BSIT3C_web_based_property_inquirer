@@ -7,11 +7,13 @@ import {
   Typography,
   InputAdornment,
   Snackbar,
+  Alert,
 } from "@mui/material";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useState } from "react";
 import design from "../styles/designs";
+import Head from "next/head";
 
 //FOR THE STYLE
 const style = {
@@ -32,7 +34,11 @@ export default function Login() {
   };
 
   //FOR THE SNACKBAR 
-  const [message, setMessage] = useState("");
+  const iMessage = {
+    mes: "",
+    severity: "warning",
+  };
+  const [message, setMessage] = useState(iMessage);
   const [open, setOpen] = useState(false);
   const handleClose = () => {
     setOpen(false);
@@ -56,26 +62,38 @@ export default function Login() {
 
     if(state.email === admin && state.pass === adminpassword)
     {
-      setMessage("Successfully logged in!");
+      setMessage({
+        mes: "Successfully logged in!",
+        severity: "success",
+      });
       setOpen(true);
       console.log("LOGGED IN SUCCESFULLY");
       router.push("/dashboard");
     }
     else if(state.email === admin)
     {
-      setMessage("Wrong Password");
+      setMessage({
+        mes: "Wrong password",
+        severity: "warning",
+      });
       setOpen(true);
       console.log("Wrong Password");
     }
     else if(state.pass === adminpassword)
     {
-      setMessage("Wrong Email/Username");
+      setMessage({
+        mes: "Wrong Email/Username",
+        severity: "warning",
+      });
       setOpen(true);
       console.log("Wrong Email/Username");
     }
     else 
     {
-      setMessage("Wrong Credentials");
+      setMessage({
+        mes: "Wrong Credentials",
+        severity: "error",
+      });
       setOpen(true);
       console.log("Wrong Credentials");
     }
@@ -98,6 +116,9 @@ export default function Login() {
         alignItems: "center",
       }}
     >
+       <Head>
+         <title> Log In </title>
+      </Head>
       <Box>
         <Typography variant="h4" sx={{ fontFamily: "Oswald" }}>
           Login to Your Account
@@ -171,9 +192,14 @@ export default function Login() {
       <Snackbar
         anchorOrigin={{ vertical: "bottom", horizontal: "left"}}
         open={open}
+        autoHideDuration={4000}
         onClose={handleClose}
-        message={message}
-      />
+      >
+        <Alert onClose={handleClose} severity={message.severity} sx={{ width: '100%' }}>
+          {message.mes}
+        </Alert>
+
+      </Snackbar>
     </Box>
   );
 }

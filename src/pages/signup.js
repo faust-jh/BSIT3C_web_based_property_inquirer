@@ -6,11 +6,13 @@ import {
   Typography,
   InputAdornment,
   Snackbar,
+  Alert,
 } from "@mui/material";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useState } from "react";
 import design from "../styles/designs";
+import Head from "next/head";
 
 //FOR THE STYLE
 const style = {
@@ -43,41 +45,61 @@ export default function Signup() {
   };
 
   //FOR THE SNACKBAR 
-  const [message, setMessage] = useState("");
+  const iMessage = {
+    mes: "",
+    severity: "warning",
+  };
+  const [message, setMessage] = useState(iMessage);
   const [open, setOpen] = useState(false);
   const handleClose = () => {
     setOpen(false);
   };
+  
 
   //VERIFYING USER INPUT
   const btnCreate = () => {
     if(state.pass === "" && state.pass === "" && state.conpass === "")
     {
-      setMessage("Please fill up the fields!");
+      setMessage({
+        mes: "Please fill up the fields",
+        severity: "warning",
+      });
       setOpen(true);
       console.log("Please fill up the fields");
     }
     else if (state.email === "")
     {
-      setMessage("Please enter email/username");
+      setMessage({
+        mes: "Please enter email/username",
+        severity: "warning",
+      });
       setOpen(true);
       console.log("Please enter email/username");
     }
     else if(state.pass === "")
     {
-      setMessage("Please enter password");
+      setMessage({
+        mes: "Please enter password",
+        severity: "warning",
+      });
       setOpen(true);
       console.log("Please enter password");
     }
     else if(state.conpass === "")
     {
-      setMessage("Please confirm your password");
+      setMessage({
+        mes: "Please confirm your password",
+        severity: "warning",
+      });
       setOpen(true);
       console.log("Please confirm your password");
     }
     else if(state.pass === state.conpass)
     {
-      setMessage("Account created successfully!");
+      setMessage({
+        mes: "Account created successfully!",
+        severity: "success",
+      });
       setOpen(true);
       setMessage
       console.log("Account created successfully!");
@@ -85,12 +107,15 @@ export default function Signup() {
     }
     else
     {
-      setMessage("Password did not match!");
+      setMessage({
+        mes: "Password did not match!",
+        severity: "error",
+      });
       setOpen(true);
       console.log("Password did not match!");
     }
   }
-  
+
   //RETURN TYPE
   return (
     <Box
@@ -103,6 +128,10 @@ export default function Signup() {
         alignItems: "center",
       }}
     >
+      <Head>
+         <title> Register </title>
+      </Head>
+      
       <Box>
         <Typography variant="h4" sx={{ fontFamily: "Oswald" }}>
           Create New Account
@@ -197,9 +226,14 @@ export default function Signup() {
       <Snackbar
         anchorOrigin={{ vertical: "bottom", horizontal: "left"}}
         open={open}
+        autoHideDuration={5000}
         onClose={handleClose}
-        message={message}
-      />
+      >
+        <Alert onClose={handleClose} severity={message.severity} sx={{ width: '100%' }}>
+          {message.mes}
+        </Alert>
+
+      </Snackbar>
     </Box>
   );
 }
