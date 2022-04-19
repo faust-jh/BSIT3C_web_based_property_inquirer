@@ -22,17 +22,15 @@ const style = {
   },
 };
 
-
 //EXPORT
 export default function Signup() {
-
   //CONSTANTS
   const router = useRouter();
   const iState = {
     email: "",
     pass: "",
     conpass: "",
-  }
+  };
 
   //GETTING THE USER INPUT
   const [state, setState] = useState(iState);
@@ -40,11 +38,11 @@ export default function Signup() {
     setState((prevItem) => ({
       ...prevItem,
       [prop]: e.target.value,
-    }))
+    }));
     console.log(state);
   };
 
-  //FOR THE SNACKBAR 
+  //FOR THE SNACKBAR
   const iMessage = {
     mes: "",
     severity: "warning",
@@ -54,59 +52,47 @@ export default function Signup() {
   const handleClose = () => {
     setOpen(false);
   };
-  
 
   //VERIFYING USER INPUT
   const btnCreate = () => {
-    if(state.pass === "" && state.pass === "" && state.conpass === "")
-    {
+    if (state.pass === "" && state.pass === "" && state.conpass === "") {
       setMessage({
         mes: "Please fill up the fields",
         severity: "warning",
       });
       setOpen(true);
       console.log("Please fill up the fields");
-    }
-    else if (state.email === "")
-    {
+    } else if (state.email === "") {
       setMessage({
         mes: "Please enter email/username",
         severity: "warning",
       });
       setOpen(true);
       console.log("Please enter email/username");
-    }
-    else if(state.pass === "")
-    {
+    } else if (state.pass === "") {
       setMessage({
         mes: "Please enter password",
         severity: "warning",
       });
       setOpen(true);
       console.log("Please enter password");
-    }
-    else if(state.conpass === "")
-    {
+    } else if (state.conpass === "") {
       setMessage({
         mes: "Please confirm your password",
         severity: "warning",
       });
       setOpen(true);
       console.log("Please confirm your password");
-    }
-    else if(state.pass === state.conpass)
-    {
+    } else if (state.pass === state.conpass) {
       setMessage({
         mes: "Account created successfully!",
         severity: "success",
       });
       setOpen(true);
-      setMessage
+      setMessage;
       console.log("Account created successfully!");
       router.push("/login");
-    }
-    else
-    {
+    } else {
       setMessage({
         mes: "Password did not match!",
         severity: "error",
@@ -114,7 +100,7 @@ export default function Signup() {
       setOpen(true);
       console.log("Password did not match!");
     }
-  }
+  };
 
   //RETURN TYPE
   return (
@@ -129,7 +115,7 @@ export default function Signup() {
       }}
     >
       <Head>
-         <title> Register </title>
+        <title> Register </title>
       </Head>
 
       <Box>
@@ -151,7 +137,7 @@ export default function Signup() {
           placeholder="Email address"
           name="email"
           type="email"
-          onChange = {hChange("email")}
+          onChange={hChange("email")}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -205,7 +191,11 @@ export default function Signup() {
           }}
           sx={{ marginTop: "12px" }}
         />
-        <Button variant="contained" sx={{...design.button1, marginTop: "12px" }} onClick = {btnCreate}>
+        <Button
+          variant="contained"
+          sx={{ ...design.button1, marginTop: "12px" }}
+          onClick={btnCreate}
+        >
           Create
         </Button>
 
@@ -221,18 +211,21 @@ export default function Signup() {
           </Typography>
         </Box>
       </Paper>
-      <img src = ".images/background1.jpg" alt= "" />
-      
+      <img src=".images/background1.jpg" alt="" />
+
       <Snackbar
-        anchorOrigin={{ vertical: "bottom", horizontal: "left"}}
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
         open={open}
         autoHideDuration={5000}
         onClose={handleClose}
       >
-        <Alert onClose={handleClose} severity={message.severity} sx={{ width: '100%' }}>
+        <Alert
+          onClose={handleClose}
+          severity={message.severity}
+          sx={{ width: "100%" }}
+        >
           {message.mes}
         </Alert>
-
       </Snackbar>
     </Box>
   );

@@ -4,7 +4,7 @@ const design = {
     borderRadius: "100px",
     textTransform: "none",
   },
-
+  
 };
 
 export default design;

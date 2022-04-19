@@ -1,13 +1,17 @@
-import React from 'react'
+import React from "react";
 import Head from "next/head";
-import { AppBar, Box, IconButton, Toolbar } from "@mui/material"
- 
-
-
+import Image from "next/image";
+import {
+  AppBar,
+  Box,
+  IconButton,
+  Toolbar,
+  Typography,
+  Drawer,
+} from "@mui/material";
 
 //EXPORT
 export default function dashboard() {
-  
   //RETURN
   return (
     <Box
@@ -26,11 +30,24 @@ export default function dashboard() {
       <AppBar>
         <Toolbar>
           <IconButton>
-            
+            <Image
+              src="/assets/svg/option.svg"
+              alt="options"
+              height={25}
+              width={25}
+            />
           </IconButton>
+          <Typography
+            variant="h5"
+            marginLeft="30px"
+            sx={{ fontFamily: "Oswald" }}
+          >
+            {" "}
+            Welcome to Property Inquirer!{" "}
+          </Typography>
         </Toolbar>
       </AppBar>
+      <Drawer anchor={"left"} variant="permanent" open={true}></Drawer>
     </Box>
-    
-  )
+  );
 }
