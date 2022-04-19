@@ -25,7 +25,6 @@ const style = {
 
 //EXPORT
 export default function Login() {
-
   //CONSTANTS
   const router = useRouter();
   const iState = {
@@ -33,7 +32,7 @@ export default function Login() {
     pass: "",
   };
 
-  //FOR THE SNACKBAR 
+  //FOR THE SNACKBAR
   const iMessage = {
     mes: "",
     severity: "warning",
@@ -51,7 +50,7 @@ export default function Login() {
     setState((prevItem) => ({
       ...prevItem,
       [prop]: e.target.value,
-    }))
+    }));
     console.log(state);
   };
 
@@ -60,8 +59,7 @@ export default function Login() {
     const admin = "admin";
     const adminpassword = "adminpass";
 
-    if(state.email === admin && state.pass === adminpassword)
-    {
+    if (state.email === admin && state.pass === adminpassword) {
       setMessage({
         mes: "Successfully logged in!",
         severity: "success",
@@ -69,27 +67,21 @@ export default function Login() {
       setOpen(true);
       console.log("LOGGED IN SUCCESFULLY");
       router.push("/dashboard");
-    }
-    else if(state.email === admin)
-    {
+    } else if (state.email === admin) {
       setMessage({
         mes: "Wrong password",
         severity: "warning",
       });
       setOpen(true);
       console.log("Wrong Password");
-    }
-    else if(state.pass === adminpassword)
-    {
+    } else if (state.pass === adminpassword) {
       setMessage({
         mes: "Wrong Email/Username",
         severity: "warning",
       });
       setOpen(true);
       console.log("Wrong Email/Username");
-    }
-    else 
-    {
+    } else {
       setMessage({
         mes: "Wrong Credentials",
         severity: "error",
@@ -116,8 +108,8 @@ export default function Login() {
         alignItems: "center",
       }}
     >
-       <Head>
-         <title> Log In </title>
+      <Head>
+        <title> Log In </title>
       </Head>
       <Box>
         <Typography variant="h4" sx={{ fontFamily: "Oswald" }}>
@@ -135,7 +127,7 @@ export default function Login() {
       >
         <TextField
           label="Email address"
-          placeholder="Email"
+          placeholder="Email address"
           name="email"
           type="email"
           onChange={hChange("email")}
@@ -172,7 +164,11 @@ export default function Login() {
           }}
           sx={{ marginTop: "12px" }}
         />
-        <Button variant="contained" sx={{ ...design.button1, marginTop: "12px" }} onClick={btnLogin}>
+        <Button
+          variant="contained"
+          sx={{ ...design.button1, marginTop: "12px" }}
+          onClick={btnLogin}
+        >
           Login
         </Button>
 
@@ -190,15 +186,18 @@ export default function Login() {
       </Paper>
 
       <Snackbar
-        anchorOrigin={{ vertical: "bottom", horizontal: "left"}}
+        anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
         open={open}
         autoHideDuration={4000}
         onClose={handleClose}
       >
-        <Alert onClose={handleClose} severity={message.severity} sx={{ width: '100%' }}>
+        <Alert
+          onClose={handleClose}
+          severity={message.severity}
+          sx={{ width: "100%" }}
+        >
           {message.mes}
         </Alert>
-
       </Snackbar>
     </Box>
   );
