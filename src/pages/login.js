@@ -135,7 +135,7 @@ export default function Login() {
       >
         <TextField
           label="Email address"
-          placeholder="Email address"
+          placeholder="Email"
           name="email"
           type="email"
           onChange={hChange("email")}
