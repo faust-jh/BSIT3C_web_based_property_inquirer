@@ -103,7 +103,7 @@ export default function Login() {
         width: "100vw",
         height: "100vh",
         display: "flex",
-        flexDirection: "column",
+        flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
       }}
@@ -111,78 +111,123 @@ export default function Login() {
       <Head>
         <title> Log In </title>
       </Head>
-      <Box>
-        <Typography variant="h4" sx={{ fontFamily: "Oswald" }}>
-          Login to Your Account
-        </Typography>
-      </Box>
       <Paper
-        elevation={3}
+        variant="elevation"
         sx={{
-          padding: "24px",
+          padding: "30px",
           display: "flex",
-          flexDirection: "column",
-          marginTop: "12px",
+          flexDirection: "row",
+          alignItems: "center",
         }}
       >
-        <TextField
-          label="Email address"
-          placeholder="Email address"
-          name="email"
-          type="email"
-          onChange={hChange("email")}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Image
-                  src="/assets/svg/mail.svg"
-                  alt="mail"
-                  width={20}
-                  height={20}
-                />
-              </InputAdornment>
-            ),
+        <Paper
+          elevation={10}
+          sx={{
+            padding: "24px",
+            display: "flex",
+            flexDirection: "column",
           }}
-        />
-        <TextField
-          label="Password"
-          placeholder="Password"
-          name="password"
-          type="password"
-          onChange={hChange("pass")}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Image
-                  src="/assets/svg/password.svg"
-                  alt="password"
-                  width={20}
-                  height={20}
-                />
-              </InputAdornment>
-            ),
-          }}
-          sx={{ marginTop: "12px" }}
-        />
-        <Button
-          variant="contained"
-          sx={{ ...design.button1, marginTop: "12px" }}
-          onClick={btnLogin}
         >
-          Login
-        </Button>
-
-        <Box
-          sx={{ display: "flex", justifyContent: "right", marginTop: "12px" }}
-        >
-          <Typography
-            variant="subtitle2"
-            onClick={gotoSignup}
-            sx={style.linkStyle}
-          >
-            Create new account
+          <Typography variant="h4" sx={{ fontFamily: "Oswald" }}>
+            Login to Your Account
           </Typography>
-        </Box>
+
+          <TextField
+            label="Email address"
+            placeholder="Email address"
+            name="email"
+            type="email"
+            onChange={hChange("email")}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Image
+                    src="/assets/svg/mail.svg"
+                    alt="mail"
+                    width={20}
+                    height={20}
+                  />
+                </InputAdornment>
+              ),
+            }}
+            sx={{ marginTop: "12px" }}
+          />
+          <TextField
+            label="Password"
+            placeholder="Password"
+            name="password"
+            type="password"
+            onChange={hChange("pass")}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Image
+                    src="/assets/svg/password.svg"
+                    alt="password"
+                    width={20}
+                    height={20}
+                  />
+                </InputAdornment>
+              ),
+            }}
+            sx={{ marginTop: "12px" }}
+          />
+          <Button
+            variant="contained"
+            sx={{ ...design.button1, marginTop: "12px" }}
+            onClick={btnLogin}
+          >
+            Login
+          </Button>
+
+          <Box
+            sx={{ display: "flex", justifyContent: "right", marginTop: "12px" }}
+          >
+            <Typography
+              variant="subtitle2"
+              onClick={gotoSignup}
+              sx={style.linkStyle}
+            >
+              Create new account
+            </Typography>
+          </Box>
+        </Paper>
+
+        <Paper
+          variant="elevation"
+          sx={{
+            padding: "200px 60px",
+            backgroundColor: "#30D5C8",
+            display: "flex",
+            flexDirection: "column",
+            marginLeft: "50px",
+          }}
+        >
+          <Typography variant="h3" align="center" sx={{ fontFamily: "Oswald" }}>
+            New Here?
+          </Typography>
+
+          <Typography
+            variant="h6"
+            align="center"
+            sx={{
+              fontFamily: "Sans-serif",
+              marginTop: "12px",
+              justifyContent: "center",
+            }}
+          >
+            Sign up and discover great <br />
+            amount of opportunities
+          </Typography>
+
+          <Button
+            variant="contained"
+            sx={{ ...design.button1, marginTop: "12px" }}
+            onClick={btnLogin}
+          >
+            Sign Up
+          </Button>
+        </Paper>
       </Paper>
 
       <Snackbar
