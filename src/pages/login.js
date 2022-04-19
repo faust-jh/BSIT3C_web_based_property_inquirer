@@ -179,18 +179,6 @@ export default function Login() {
           >
             Login
           </Button>
-
-          <Box
-            sx={{ display: "flex", justifyContent: "right", marginTop: "12px" }}
-          >
-            <Typography
-              variant="subtitle2"
-              onClick={gotoSignup}
-              sx={style.linkStyle}
-            >
-              Create new account
-            </Typography>
-          </Box>
         </Paper>
 
         <Paper
@@ -223,7 +211,7 @@ export default function Login() {
           <Button
             variant="contained"
             sx={{ ...design.button1, marginTop: "12px" }}
-            onClick={btnLogin}
+            onClick={gotoSignup}
           >
             Sign Up
           </Button>
