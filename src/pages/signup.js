@@ -102,6 +102,11 @@ export default function Signup() {
     }
   };
 
+  //FUNCTION GOING TO THE LOGIN PAGE
+  const gotoLogin = () => {
+    router.push("/login");
+  };
+
   //RETURN TYPE
   return (
     <Box
@@ -112,26 +117,76 @@ export default function Signup() {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+
+        backgroundImage: "url(/images/background1.jpg)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <Head>
         <title> Register </title>
       </Head>
 
-      <Box>
-        <Typography variant="h4" sx={{ fontFamily: "Oswald" }}>
-          Create New Account
-        </Typography>
-      </Box>
+      <Paper
+        variant="elevation"
+        sx={{
+          padding: "30px",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          backgroundColor: "rgba(255, 255, 255, 0.5)", 
+        }}
+      >
+        <Paper
+          variant="elevation"
+          sx={{
+            padding: "200px 60px",
+            backgroundColor: "#30D5C8",
+            display: "flex",
+            flexDirection: "column",
+            marginRight: "50px",
+          }}
+        >
+          <Typography variant="h4" align="center" sx={{ fontFamily: "Oswald" }}>
+            Have an account?
+          </Typography>
+
+          <Typography
+            variant="h7"
+            align="center"
+            sx={{
+              fontFamily: "Sans-serif",
+              marginTop: "12px",
+              justifyContent: "center",
+            }}
+          >
+            Log In and explore the <br />
+            best houses around the country
+          </Typography>
+
+          <Button
+            variant="contained"
+            sx={{ ...design.button1, marginTop: "12px" }}
+            onClick={gotoLogin}
+          >
+            Log In
+          </Button>
+        </Paper>
       <Paper
         elevation={3}
         sx={{
           padding: "24px",
           display: "flex",
           flexDirection: "column",
-          marginTop: "12px",
         }}
       >
+        <Box>
+        <Typography variant="h4" sx={{ fontFamily: "Oswald", marginBottom: "25px" }}>
+          Create New Account
+        </Typography>
+        </Box>
+
         <TextField
           label="Email address"
           placeholder="Email address"
@@ -198,20 +253,8 @@ export default function Signup() {
         >
           Create
         </Button>
-
-        <Box
-          sx={{ display: "flex", justifyContent: "right", marginTop: "12px" }}
-        >
-          <Typography
-            variant="subtitle2"
-            onClick={() => router.push("/login")}
-            sx={style.linkStyle}
-          >
-            Already have an account? Please Sign In
-          </Typography>
-        </Box>
       </Paper>
-      <img src=".images/background1.jpg" alt="" />
+      </Paper>
 
       <Snackbar
         anchorOrigin={{ vertical: "bottom", horizontal: "left" }}

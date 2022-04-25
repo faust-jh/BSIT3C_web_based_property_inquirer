@@ -107,6 +107,11 @@ export default function Login() {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
+        
+        backgroundImage: "url(/images/background1.jpg)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       <Head>
@@ -119,6 +124,7 @@ export default function Login() {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
+          backgroundColor: "rgba(255, 255, 255, 0.5)", 
         }}
       >
         <Paper
@@ -127,6 +133,7 @@ export default function Login() {
             padding: "24px",
             display: "flex",
             flexDirection: "column",
+            opacity: "1",
           }}
         >
           <Typography variant="h4" sx={{ fontFamily: "Oswald" }}>
@@ -197,7 +204,7 @@ export default function Login() {
           </Typography>
 
           <Typography
-            variant="h6"
+            variant="h7"
             align="center"
             sx={{
               fontFamily: "Sans-serif",
