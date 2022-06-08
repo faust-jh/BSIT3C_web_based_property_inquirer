@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import React from "react";
 import { useState } from "react";
-import Image from "next/image";
+//import { View, Image } from "react-native";
 
 export default function index() {
   const router = useRouter();
@@ -31,6 +31,7 @@ export default function index() {
           display: "flex",
           flexDirection: "row",
           marginTop: "70px",
+          justifyContent: "center",
         }}
       >
         <Head>
@@ -68,27 +69,14 @@ export default function index() {
             </Toolbar>
           </AppBar>
         </React.Fragment>
-
-        <img src="/images/7.jpg" alt="" height={650} width={"100%"} flex={1} />
-      </Box>
-
-      <Box
-        sx={{
-          alignItems: "center",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <Paper
-          elevation={10}
-          sx={{
-            padding: "24px",
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <Typography>qweqwe</Typography>
-        </Paper>
+        <img
+          src="/images/7.jpg"
+          alt=""
+          sx={{ position: "absolute" }}
+          height={550}
+          width={"80%"}
+          flex={1}
+        ></img>
       </Box>
     </Box>
   );

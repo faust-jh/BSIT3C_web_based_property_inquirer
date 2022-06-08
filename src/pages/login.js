@@ -98,7 +98,6 @@ export default function Login() {
 
   //THE DISPLAY
   return (
-    
     <Box
       sx={{
         width: "100vw",
@@ -107,7 +106,7 @@ export default function Login() {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        
+
         backgroundImage: "url(/images/background1.jpg)",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
@@ -124,7 +123,7 @@ export default function Login() {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          backgroundColor: "rgba(255, 255, 255, 0.5)", 
+          backgroundColor: "rgba(255, 255, 255, 0.5)",
         }}
       >
         <Paper
