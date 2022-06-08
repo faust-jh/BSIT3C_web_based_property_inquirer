@@ -7,7 +7,14 @@ import Image from "next/image";
 export default function Dashboard() {
   const style = {
     TopDeals: {
-      padding: "24px",
+      padding: "15px",
+    },
+    BoxLogo: {
+      paddingTop: "30px",
+      paddingBottom: "30px",
+      alignItems: "center",
+      textAlign: "center",
+      justifyContent: "center",
     },
     BoxImage: {
       paddingTop: "10px",
@@ -23,9 +30,24 @@ export default function Dashboard() {
     Text: {
       fontWeight: "bold",
     },
+    Title: {
+      color: "white",
+      fontSize: "30px",
+      paddingLeft: "20px",
+      fontWeight: "bold",
+    },
   };
   return (
     <Box sx={{ padding: "0 24px" }}>
+      <Box sx={style.BoxLogo} display="flex">
+        <Image
+          src="/assets/svg/dashboard.svg"
+          alt="password"
+          width={40}
+          height={40}
+        />
+        <Typography sx={style.Title}>Dashboard</Typography>
+      </Box>
       <Grid container spacing={3}>
         <Grid item sm>
           <Paper sx={style.TopDeals}>
@@ -142,7 +164,7 @@ export default function Dashboard() {
           </Paper>
         </Grid>
       </Grid>
-      <Box sx={{ padding: "56px" }}>
+      <Box sx={{ padding: "26.5px" }}>
         <Grid container spacing={3}>
           <Grid item sm>
             <Box sx={style.BoxSales}>

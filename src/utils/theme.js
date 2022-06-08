@@ -12,7 +12,7 @@ const theme = createTheme({
   },
 
   typography: {
-    fontFamily: "Barlow",
+    fontFamily: "Helvetica",
   },
 });
 

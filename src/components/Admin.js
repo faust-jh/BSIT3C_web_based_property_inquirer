@@ -192,7 +192,7 @@ export default function Admin({ children }) {
 
       <Box
         sx={{
-          marginTop: "90px",
+          marginTop: "40.5px",
           background: "linear-gradient(#30D5C8, blue);",
         }}
       >
