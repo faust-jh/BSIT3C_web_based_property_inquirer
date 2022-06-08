@@ -110,7 +110,8 @@ export default function Admin({ children }) {
               </ListItemIcon>
               <ListItemText primary="Deals" />
             </ListItem>
-            <ListItem button>
+
+            <ListItem button onClick={() => drawerClose("/properties")}>
               <ListItemIcon>
                 <Image
                   src="/assets/svg/property.svg"
@@ -121,7 +122,7 @@ export default function Admin({ children }) {
               </ListItemIcon>
               <ListItemText primary="Properties" />
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={() => drawerClose("/loans")}>
               <ListItemIcon>
                 <Image
                   src="/assets/svg/loan.svg"
@@ -132,7 +133,7 @@ export default function Admin({ children }) {
               </ListItemIcon>
               <ListItemText primary="Loans" />
             </ListItem>
-            <ListItem button>
+            <ListItem button onClick={() => drawerClose("/document")}>
               <ListItemIcon>
                 <Image
                   src="/assets/svg/document.svg"
@@ -146,7 +147,7 @@ export default function Admin({ children }) {
 
             <Divider />
 
-            <ListItem button>
+            <ListItem button onClick={() => drawerClose("/settings")}>
               <ListItemIcon>
                 <Image
                   src="/assets/svg/settings.svg"
