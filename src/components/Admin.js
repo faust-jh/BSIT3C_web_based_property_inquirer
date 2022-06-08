@@ -40,13 +40,7 @@ export default function Admin({ children }) {
 
   //THE DISPLAY
   return (
-    <Box
-      sx={{
-        width: "100vw",
-        height: "100vh",
-        display: "flex",
-      }}
-    >
+    <Box>
       <Head>
         <title> Dashboard </title>
       </Head>
@@ -196,7 +190,14 @@ export default function Admin({ children }) {
         </Box>
       </Drawer>
 
-      <Box margin="90px">{children}</Box>
+      <Box
+        sx={{
+          marginTop: "90px",
+          background: "linear-gradient(#30D5C8, blue);",
+        }}
+      >
+        {children}
+      </Box>
     </Box>
   );
 }

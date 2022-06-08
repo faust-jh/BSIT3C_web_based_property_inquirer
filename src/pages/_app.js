@@ -7,7 +7,6 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-
       {getLayout(<Component {...pageProps} />)}
     </ThemeProvider>
   );
