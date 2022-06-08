@@ -45,9 +45,6 @@ export default function Admin({ children }) {
         width: "100vw",
         height: "100vh",
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
       }}
     >
       <Head>
@@ -85,7 +82,11 @@ export default function Admin({ children }) {
           <List sx={{ marginTop: "55px", flexGrow: 1 }}>
             <Divider />
 
-            <ListItem button onClick={() => drawerClose("/dashboard")}>
+            <ListItem
+              button
+              onClick={() => drawerClose("/dashboard")}
+              selected={router.pathname.includes("/dashboard")}
+            >
               <ListItemIcon>
                 <Image
                   src="/assets/svg/dashboard.svg"
@@ -99,7 +100,11 @@ export default function Admin({ children }) {
 
             <Divider />
 
-            <ListItem button onClick={() => drawerClose("/deals")}>
+            <ListItem
+              button
+              onClick={() => drawerClose("/deals")}
+              selected={router.pathname.includes("/deals")}
+            >
               <ListItemIcon>
                 <Image
                   src="/assets/svg/deals.svg"
@@ -111,7 +116,11 @@ export default function Admin({ children }) {
               <ListItemText primary="Deals" />
             </ListItem>
 
-            <ListItem button onClick={() => drawerClose("/properties")}>
+            <ListItem
+              button
+              onClick={() => drawerClose("/properties")}
+              selected={router.pathname.includes("/properties")}
+            >
               <ListItemIcon>
                 <Image
                   src="/assets/svg/property.svg"
@@ -122,7 +131,11 @@ export default function Admin({ children }) {
               </ListItemIcon>
               <ListItemText primary="Properties" />
             </ListItem>
-            <ListItem button onClick={() => drawerClose("/loans")}>
+            <ListItem
+              button
+              onClick={() => drawerClose("/loans")}
+              selected={router.pathname.includes("/loans")}
+            >
               <ListItemIcon>
                 <Image
                   src="/assets/svg/loan.svg"
@@ -133,7 +146,11 @@ export default function Admin({ children }) {
               </ListItemIcon>
               <ListItemText primary="Loans" />
             </ListItem>
-            <ListItem button onClick={() => drawerClose("/document")}>
+            <ListItem
+              button
+              onClick={() => drawerClose("/document")}
+              selected={router.pathname.includes("/document")}
+            >
               <ListItemIcon>
                 <Image
                   src="/assets/svg/document.svg"
@@ -147,7 +164,11 @@ export default function Admin({ children }) {
 
             <Divider />
 
-            <ListItem button onClick={() => drawerClose("/settings")}>
+            <ListItem
+              button
+              onClick={() => drawerClose("/settings")}
+              selected={router.pathname.includes("/settings")}
+            >
               <ListItemIcon>
                 <Image
                   src="/assets/svg/settings.svg"
@@ -175,7 +196,7 @@ export default function Admin({ children }) {
         </Box>
       </Drawer>
 
-      <Box>{children}</Box>
+      <Box margin="90px">{children}</Box>
     </Box>
   );
 }
