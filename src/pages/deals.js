@@ -7,7 +7,7 @@ import Image from "next/Image";
 export default function Deals() {
   const style = {
     TopDeals: {
-      padding: "15px",
+      padding: "5px",
     },
     BoxLogo: {
       paddingTop: "30px",
@@ -36,6 +36,11 @@ export default function Deals() {
       paddingLeft: "20px",
       fontWeight: "bold",
     },
+    sale: {
+      alignItems: "center",
+      textAlign: "center",
+      fontWeight: "bold",
+    },
   };
   return (
     <Box sx={{ padding: "0 24px" }}>
@@ -48,50 +53,247 @@ export default function Deals() {
         />
         <Typography sx={style.Title}>Deals</Typography>
       </Box>
+
       <Grid container spacing={3}>
         <Grid item sm>
           <Paper sx={style.TopDeals}>
-            <Box>
-              <Typography variant="h6">qweqwe</Typography>
+            <Box display="flex">
+              <Image
+                src="/assets/svg/search.svg"
+                alt="password"
+                width={20}
+                height={20}
+              />
+              <Typography marginLeft="auto">Search</Typography>
             </Box>
           </Paper>
         </Grid>
-        <Grid item sm>
+        <Grid item xs={1.4}>
           <Paper sx={style.TopDeals}>
-            <Box>
-              <Typography variant="h6">qweqwe</Typography>
+            <Box display="flex">
+              <Typography
+                sx={{
+                  marginRight: "30px",
+                  marginLeft: "5px",
+                }}
+              >
+                For Sale
+              </Typography>
+              <Image
+                src="/assets/svg/more.svg"
+                alt="password"
+                width={20}
+                height={20}
+              />
             </Box>
           </Paper>
         </Grid>
-        <Grid item sm>
+        <Grid item xs={1.8}>
           <Paper sx={style.TopDeals}>
-            <Box>
-              <Typography variant="h6">qweqwe</Typography>
+            <Box display="flex">
+              <Typography
+                sx={{
+                  marginRight: "20px",
+                  marginLeft: "5px",
+                }}
+              >
+                MinPrice: $500K
+              </Typography>
+              <Image
+                src="/assets/svg/more.svg"
+                alt="password"
+                width={20}
+                height={20}
+              />
             </Box>
           </Paper>
         </Grid>
-        <Grid item sm>
+        <Grid item xs={1.8}>
           <Paper sx={style.TopDeals}>
-            <Box>
-              <Typography variant="h6">qweqwe</Typography>
+            <Box display="flex">
+              <Typography
+                sx={{
+                  marginRight: "20px",
+                  marginLeft: "5px",
+                }}
+              >
+                MaxPrice: 700k
+              </Typography>
+              <Image
+                src="/assets/svg/more.svg"
+                alt="password"
+                width={20}
+                height={20}
+              />
             </Box>
           </Paper>
         </Grid>
-        <Grid item sm>
+        <Grid item xs={1.8}>
           <Paper sx={style.TopDeals}>
-            <Box>
-              <Typography variant="h6">qweqwe</Typography>
+            <Box display="flex">
+              <Typography
+                sx={{
+                  marginRight: "20px",
+                  marginLeft: "5px",
+                }}
+              >
+                FloorArea: 60 m2
+              </Typography>
+              <Image
+                src="/assets/svg/updown.svg"
+                alt="password"
+                width={10}
+                height={10}
+              />
             </Box>
           </Paper>
         </Grid>
-        <Grid item sm>
+        <Grid item xs={1.2}>
           <Paper sx={style.TopDeals}>
-            <Box>
-              <Typography variant="h6">qweqwe</Typography>
+            <Box display="flex">
+              <Image
+                src="/assets/svg/slider.svg"
+                alt="password"
+                width={20}
+                height={20}
+              />
+              <Typography
+                sx={{
+                  marginLeft: "10px",
+                }}
+              >
+                More
+              </Typography>
             </Box>
           </Paper>
         </Grid>
       </Grid>
+
+      <Box
+        sx={{
+          display: "flex",
+          padding: "5px",
+          justifyContent: "center",
+        }}
+      >
+        <Box
+          sx={{
+            flexDirection: "column",
+            marginRight: "20px",
+            marginTop: "90px",
+          }}
+        >
+          <Grid container>
+            <Grid item>
+              <Box
+                sx={{
+                  margin: "20px",
+                }}
+              >
+                <Paper
+                  variant="elevation"
+                  sx={{
+                    padding: "15px",
+                    backgroundColor: "rgba(255, 255, 255, 0.8)",
+                    textAlign: "center",
+                  }}
+                >
+                  <Image
+                    src="/images/1.jpg"
+                    alt="Home"
+                    width={150}
+                    height={150}
+                  />
+                  <Typography sx={style.sale}> For Sale!</Typography>
+                  <Typography sx={style.sale}> $ 550,000</Typography>
+                  <Typography sx={style.sale}> Meycauayan, Bulacan</Typography>
+                </Paper>
+              </Box>
+            </Grid>
+            <Grid item>
+              <Box
+                sx={{
+                  margin: "20px",
+                }}
+              >
+                <Paper
+                  variant="elevation"
+                  sx={{
+                    padding: "15px",
+                    backgroundColor: "rgba(255, 255, 255, 0.8)",
+                    textAlign: "center",
+                  }}
+                >
+                  <Image
+                    src="/images/2.jpg"
+                    alt="Home"
+                    width={150}
+                    height={150}
+                  />
+                  <Typography sx={style.sale}> For Sale!</Typography>
+                  <Typography sx={style.sale}> $ 680,000</Typography>
+                  <Typography sx={style.sale}> Bocaue, Bulacan</Typography>
+                </Paper>
+              </Box>
+            </Grid>
+            <Grid item>
+              <Box
+                sx={{
+                  margin: "20px",
+                }}
+              >
+                <Paper
+                  variant="elevation"
+                  sx={{
+                    padding: "15px",
+                    backgroundColor: "rgba(255, 255, 255, 0.8)",
+                    textAlign: "center",
+                  }}
+                >
+                  <Image
+                    src="/images/3.jpg"
+                    alt="Home"
+                    width={150}
+                    height={150}
+                  />
+                  <Typography sx={style.sale}> For Sale!</Typography>
+                  <Typography sx={style.sale}> $ 610,000</Typography>
+                  <Typography sx={style.sale}> Malolos, Bulacan</Typography>
+                </Paper>
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
+
+        <Box
+          sx={{
+            display: "inline-block",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center",
+          }}
+        >
+          <Box
+            sx={{
+              margin: "20px",
+            }}
+          >
+            <Paper
+              variant="elevation"
+              sx={{
+                padding: "15px",
+                backgroundColor: "white",
+                textAlign: "center",
+              }}
+            >
+              <Image src="/images/4.jpg" alt="Home" width={319} height={319} />
+              <Typography sx={style.sale}> For Sale!</Typography>
+              <Typography sx={style.sale}> $ 700,000</Typography>
+              <Typography sx={style.sale}> Plaridel, Bulacan</Typography>
+            </Paper>
+          </Box>
+        </Box>
+      </Box>
     </Box>
   );
 }
