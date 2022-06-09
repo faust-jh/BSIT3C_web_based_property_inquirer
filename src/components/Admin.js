@@ -102,7 +102,7 @@ export default function Admin({ children }) {
                   height={20}
                 />
               </ListItemIcon>
-              <ListItemText primary="Dashboard" />
+              <ListItemText primary="Reviews" />
             </ListItem>
 
             <Divider />

@@ -3,6 +3,7 @@ import Admin from "../components/Admin";
 import { Box } from "@mui/system";
 import { Grid, Paper, Typography } from "@mui/material";
 import Image from "next/Image";
+import Head from "next/head";
 
 export default function Properties() {
   const style = {
@@ -59,6 +60,9 @@ export default function Properties() {
   };
   return (
     <Box sx={{ padding: "0 24px" }}>
+      <Head>
+        <title>Woodlands - Properties</title>
+      </Head>
       <Box sx={style.BoxLogo} display="flex">
         <Image
           src="/assets/svg/property.svg"

@@ -3,6 +3,7 @@ import Admin from "../components/Admin";
 import { Box } from "@mui/system";
 import { Grid, Paper, Typography } from "@mui/material";
 import Image from "next/Image";
+import Head from "next/head";
 
 export default function Deals() {
   const style = {
@@ -54,6 +55,9 @@ export default function Deals() {
           width={40}
           height={40}
         />
+        <Head>
+          <title> Woodlands - Deals </title>
+        </Head>
         <Typography sx={style.Title}>Deals</Typography>
       </Box>
 

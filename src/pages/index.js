@@ -25,19 +25,11 @@ export default function index() {
     router.push("/login");
   };
   return (
-    <Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-          marginTop: "70px",
-          justifyContent: "center",
-        }}
-      >
+    <Box display="flex">
+      <Box>
         <Head>
           <title> Yokuso! </title>
         </Head>
-
         <React.Fragment>
           <AppBar>
             <Toolbar>
@@ -63,7 +55,6 @@ export default function index() {
                 display="flex"
                 alignItems="center"
                 sx={{ marginLeft: "auto" }}
-                color="#89f7f"
               >
                 <Tab label="Home" />
                 <Tab label="Services" />
@@ -73,7 +64,14 @@ export default function index() {
 
               <Button
                 variant="contained"
-                sx={{ marginLeft: "3%", marginRight: "3%" }}
+                sx={{
+                  marginLeft: "3%",
+                  marginRight: "3%",
+                  backgroundColor: "white",
+                  width: "150px",
+                  fontFamily: "Gentium Plus",
+                  fontWeight: "bold",
+                }}
                 onClick={gotoLogin}
               >
                 Log In
@@ -84,8 +82,8 @@ export default function index() {
         <Box
           sx={{
             width: "100vw",
-            height: "89.3vh",
-            backgroundImage: "url(/images/background1.jpg)",
+            height: "100vh",
+            backgroundImage: "url(/images/Front.jpg)",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center",

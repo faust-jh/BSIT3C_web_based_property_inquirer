@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import Image from "next/Image";
 import design from "../styles/designs";
+import Head from "next/head";
 
 export default function Documents() {
   const style = {
@@ -60,7 +61,7 @@ export default function Documents() {
     },
   };
   return (
-    <Box sx={{ padding: "0 24px" }}>
+    <Box sx={{ padding: "0 24px", paddingBottom: "50px" }}>
       <Box sx={style.BoxLogo} display="flex">
         <Image
           src="/assets/svg/document.svg"
@@ -68,6 +69,9 @@ export default function Documents() {
           width={40}
           height={40}
         />
+        <Head>
+          <title>Woodlands - Documents</title>
+        </Head>
         <Typography sx={style.Title}>Documents</Typography>
       </Box>
       <Grid container spacing={4}>
@@ -87,7 +91,11 @@ export default function Documents() {
             </Typography>
             <Button
               variant="contained"
-              sx={{ ...design.button2, marginTop: "12px", marginRight: "12px" }}
+              sx={{
+                ...design.button2,
+                marginTop: "12px",
+                marginLeft: "auto",
+              }}
             >
               <Typography sx={{ marginRight: "10px" }}>
                 Download File

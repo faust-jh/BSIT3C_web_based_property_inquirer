@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import React from "react";
 import Admin from "../components/Admin";
 import Image from "next/image";
+import Head from "next/head";
 
 export default function Dashboard() {
   const style = {
@@ -56,7 +57,10 @@ export default function Dashboard() {
           width={40}
           height={40}
         />
-        <Typography sx={style.Title}>Dashboard</Typography>
+        <Head>
+          <title>Woodlands - Reviews </title>
+        </Head>
+        <Typography sx={style.Title}>Reviews</Typography>
       </Box>
       <Grid container spacing={3}>
         <Grid item sm>

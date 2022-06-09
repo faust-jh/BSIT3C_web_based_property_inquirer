@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import Image from "next/Image";
 import design from "../styles/designs";
+import Head from "next/head";
 
 export default function Loans() {
   const style = {
@@ -60,6 +61,9 @@ export default function Loans() {
 
   return (
     <Box sx={{ padding: "0 24px", flexDirection: "row" }}>
+      <Head>
+        <title>Woodlands - Loans</title>
+      </Head>
       <Box sx={style.BoxLogo} display="flex">
         <Image src="/assets/svg/loan.svg" alt="loans" width={40} height={40} />
         <Typography sx={style.Title}>Loans</Typography>
