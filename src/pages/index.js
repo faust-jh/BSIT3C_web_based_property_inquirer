@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import React from "react";
 import { useState } from "react";
-//import { View, Image } from "react-native";
+import Image from "next/image";
 
 export default function index() {
   const router = useRouter();
@@ -41,7 +41,19 @@ export default function index() {
         <React.Fragment>
           <AppBar>
             <Toolbar>
-              <Typography>MUST BE THE LOGO</Typography>
+              <Box
+                sx={{
+                  paddingLeft: "20px",
+                  paddingTop: "5px",
+                }}
+              >
+                <Image
+                  src="/images/Logo.png"
+                  alt="logo"
+                  height={60}
+                  width={60}
+                />
+              </Box>
 
               <Tabs
                 textColor="inherit"
@@ -51,7 +63,7 @@ export default function index() {
                 display="flex"
                 alignItems="center"
                 sx={{ marginLeft: "auto" }}
-                color="#F7CCAC"
+                color="#89f7f"
               >
                 <Tab label="Home" />
                 <Tab label="Services" />
@@ -69,14 +81,16 @@ export default function index() {
             </Toolbar>
           </AppBar>
         </React.Fragment>
-        <img
-          src="/images/7.jpg"
-          alt=""
-          sx={{ position: "absolute" }}
-          height={550}
-          width={"80%"}
-          flex={1}
-        ></img>
+        <Box
+          sx={{
+            width: "100vw",
+            height: "89.3vh",
+            backgroundImage: "url(/images/background1.jpg)",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        ></Box>
       </Box>
     </Box>
   );

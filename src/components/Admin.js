@@ -57,10 +57,14 @@ export default function Admin({ children }) {
           <Typography
             variant="h5"
             marginLeft="30px"
-            sx={{ fontFamily: "Oswald" }}
+            sx={{
+              fontFamily: "Gentium Plus",
+              color: "white",
+              fontWeight: "bold",
+            }}
           >
             {" "}
-            Welcome to Property Inquirer!{" "}
+            Yokuso! Welcome to the Property Inquirer!{" "}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -68,12 +72,21 @@ export default function Admin({ children }) {
         <Box
           sx={{
             minWidth: "200px",
-            height: "100vh",
+            height: "120vh",
             display: "flex",
             flexDirection: "column",
           }}
         >
-          <List sx={{ marginTop: "55px", flexGrow: 1 }}>
+          <List sx={{ flexGrow: 1 }}>
+            <Box>
+              <Image
+                src="/images/Logo.png"
+                alt="logo"
+                height={250}
+                width={250}
+              />
+            </Box>
+
             <Divider />
 
             <ListItem
@@ -142,8 +155,8 @@ export default function Admin({ children }) {
             </ListItem>
             <ListItem
               button
-              onClick={() => drawerClose("/document")}
-              selected={router.pathname.includes("/document")}
+              onClick={() => drawerClose("/documents")}
+              selected={router.pathname.includes("/documents")}
             >
               <ListItemIcon>
                 <Image
@@ -175,7 +188,11 @@ export default function Admin({ children }) {
             </ListItem>
           </List>
           <List>
-            <ListItem button>
+            <ListItem
+              button
+              onClick={() => drawerClose("/login")}
+              selected={router.pathname.includes("/login")}
+            >
               <ListItemIcon>
                 <Image
                   src="/assets/svg/signout.svg"
@@ -193,7 +210,7 @@ export default function Admin({ children }) {
       <Box
         sx={{
           marginTop: "40.5px",
-          background: "linear-gradient(#30D5C8, blue);",
+          background: "linear-gradient(#a1c4fd, #c2e9fb);",
         }}
       >
         {children}

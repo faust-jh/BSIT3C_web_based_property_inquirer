@@ -7,14 +7,15 @@ import Image from "next/Image";
 export default function Deals() {
   const style = {
     TopDeals: {
-      padding: "5px",
+      padding: "10px",
     },
     BoxLogo: {
-      paddingTop: "30px",
+      paddingTop: "40px",
       paddingBottom: "30px",
-      alignItems: "center",
-      textAlign: "center",
-      justifyContent: "center",
+      paddingLeft: "20px",
+      backgroundColor: "rgba(255, 255, 255, 0.8)",
+      marginBottom: "20px",
+      borderRadius: "20px",
     },
     BoxImage: {
       paddingTop: "10px",
@@ -31,15 +32,17 @@ export default function Deals() {
       fontWeight: "bold",
     },
     Title: {
-      color: "white",
+      color: "black",
       fontSize: "30px",
       paddingLeft: "20px",
       fontWeight: "bold",
+      fontFamily: "Gentium Plus",
     },
     sale: {
       alignItems: "center",
       textAlign: "center",
       fontWeight: "bold",
+      fontFamily: "Gentium Plus",
     },
   };
   return (
@@ -73,7 +76,7 @@ export default function Deals() {
             <Box display="flex">
               <Typography
                 sx={{
-                  marginRight: "30px",
+                  marginRight: "25px",
                   marginLeft: "5px",
                 }}
               >
@@ -93,7 +96,7 @@ export default function Deals() {
             <Box display="flex">
               <Typography
                 sx={{
-                  marginRight: "20px",
+                  marginRight: "10px",
                   marginLeft: "5px",
                 }}
               >
@@ -113,7 +116,7 @@ export default function Deals() {
             <Box display="flex">
               <Typography
                 sx={{
-                  marginRight: "20px",
+                  marginRight: "10px",
                   marginLeft: "5px",
                 }}
               >
@@ -133,7 +136,7 @@ export default function Deals() {
             <Box display="flex">
               <Typography
                 sx={{
-                  marginRight: "20px",
+                  marginRight: "10px",
                   marginLeft: "5px",
                 }}
               >
@@ -187,15 +190,16 @@ export default function Deals() {
             <Grid item>
               <Box
                 sx={{
-                  margin: "20px",
+                  margin: "10px",
                 }}
               >
                 <Paper
                   variant="elevation"
                   sx={{
-                    padding: "15px",
+                    padding: "40px",
                     backgroundColor: "rgba(255, 255, 255, 0.8)",
                     textAlign: "center",
+                    borderRadius: "20px",
                   }}
                 >
                   <Image
@@ -213,15 +217,16 @@ export default function Deals() {
             <Grid item>
               <Box
                 sx={{
-                  margin: "20px",
+                  margin: "10px",
                 }}
               >
                 <Paper
                   variant="elevation"
                   sx={{
-                    padding: "15px",
+                    padding: "40px",
                     backgroundColor: "rgba(255, 255, 255, 0.8)",
                     textAlign: "center",
+                    borderRadius: "20px",
                   }}
                 >
                   <Image
@@ -239,15 +244,16 @@ export default function Deals() {
             <Grid item>
               <Box
                 sx={{
-                  margin: "20px",
+                  margin: "10px",
                 }}
               >
                 <Paper
                   variant="elevation"
                   sx={{
-                    padding: "15px",
+                    padding: "40px",
                     backgroundColor: "rgba(255, 255, 255, 0.8)",
                     textAlign: "center",
+                    borderRadius: "20px",
                   }}
                 >
                   <Image
@@ -281,9 +287,10 @@ export default function Deals() {
             <Paper
               variant="elevation"
               sx={{
-                padding: "15px",
+                padding: "40px",
                 backgroundColor: "white",
                 textAlign: "center",
+                borderRadius: "20px",
               }}
             >
               <Image src="/images/4.jpg" alt="Home" width={319} height={319} />

@@ -3,7 +3,11 @@ const design = {
     borderRadius: "100px",
     textTransform: "none",
   },
-
+  button2: {
+    borderRadius: "100px",
+    textTransform: "none",
+    width: "200px",
+  },
   img1: {
     outerHeight: "100px",
     outerWidth: "100px",

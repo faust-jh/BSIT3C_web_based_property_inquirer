@@ -8,13 +8,15 @@ export default function Dashboard() {
   const style = {
     TopDeals: {
       padding: "15px",
+      borderRadius: "20px",
     },
     BoxLogo: {
-      paddingTop: "30px",
+      paddingTop: "40px",
       paddingBottom: "30px",
-      alignItems: "center",
-      textAlign: "center",
-      justifyContent: "center",
+      paddingLeft: "20px",
+      backgroundColor: "rgba(255, 255, 255, 0.8)",
+      marginBottom: "20px",
+      borderRadius: "20px",
     },
     BoxImage: {
       paddingTop: "10px",
@@ -23,18 +25,26 @@ export default function Dashboard() {
       background: "white",
       padding: "20px",
       fontWeight: "bold",
+      fontFamily: "",
+      borderRadius: "20px",
     },
     BoxSales: {
       paddingTop: "13px",
     },
     Text: {
       fontWeight: "bold",
+      fontFamily: "Gentium Plus",
     },
     Title: {
-      color: "white",
+      color: "black",
       fontSize: "30px",
       paddingLeft: "20px",
       fontWeight: "bold",
+      fontFamily: "Gentium Plus",
+    },
+    Text2: {
+      fontFamily: "Gentium Plus",
+      fontSize: "20px",
     },
   };
   return (
@@ -86,7 +96,7 @@ export default function Dashboard() {
                 height={20}
               />
             </Box>
-            <Typography variant="h6">(24.7k Review)</Typography>
+            <Typography variant="h7">(24.7k Review)</Typography>
           </Paper>
         </Grid>
         <Grid item sm>
@@ -126,7 +136,7 @@ export default function Dashboard() {
                 height={20}
               />
             </Box>
-            <Typography variant="h6">(45.3k Review)</Typography>
+            <Typography variant="h7">(45.3k Review)</Typography>
           </Paper>
         </Grid>
         <Grid item sm>
@@ -160,7 +170,7 @@ export default function Dashboard() {
                 height={20}
               />
             </Box>
-            <Typography variant="h6">(35.9k Review)</Typography>
+            <Typography variant="h7">(35.9k Review)</Typography>
           </Paper>
         </Grid>
       </Grid>
@@ -178,7 +188,7 @@ export default function Dashboard() {
           </Grid>
           <Grid item xs={6} md={8}>
             <Box sx={style.BoxText}>
-              <Typography>
+              <Typography sx={style.Text2}>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris

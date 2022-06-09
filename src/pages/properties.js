@@ -10,11 +10,12 @@ export default function Properties() {
       padding: "5px",
     },
     BoxLogo: {
-      paddingTop: "30px",
+      paddingTop: "40px",
       paddingBottom: "30px",
-      alignItems: "center",
-      textAlign: "center",
-      justifyContent: "center",
+      paddingLeft: "20px",
+      backgroundColor: "rgba(255, 255, 255, 0.8)",
+      marginBottom: "20px",
+      borderRadius: "20px",
     },
     BoxImage: {
       paddingTop: "10px",
@@ -31,10 +32,11 @@ export default function Properties() {
       fontWeight: "bold",
     },
     Title: {
-      color: "white",
+      color: "black",
       fontSize: "30px",
       paddingLeft: "20px",
       fontWeight: "bold",
+      fontFamily: "Gentium Plus",
     },
     sale: {
       alignItems: "center",

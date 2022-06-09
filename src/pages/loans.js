@@ -18,11 +18,12 @@ export default function Loans() {
       padding: "15px",
     },
     BoxLogo: {
-      paddingTop: "30px",
+      paddingTop: "40px",
       paddingBottom: "30px",
-      alignItems: "center",
-      textAlign: "center",
-      justifyContent: "center",
+      paddingLeft: "20px",
+      backgroundColor: "rgba(255, 255, 255, 0.8)",
+      marginBottom: "20px",
+      borderRadius: "20px",
     },
     BoxImage: {
       paddingTop: "10px",
@@ -39,10 +40,11 @@ export default function Loans() {
       fontWeight: "bold",
     },
     Title: {
-      color: "white",
+      color: "black",
       fontSize: "30px",
       paddingLeft: "20px",
       fontWeight: "bold",
+      fontFamily: "Gentium Plus",
     },
     Name: {
       fontSize: "30px",
@@ -75,6 +77,7 @@ export default function Loans() {
                 padding: "15px",
                 backgroundColor: "rgba(255, 255, 255, 0.8)",
                 textAlign: "center",
+                borderRadius: "20px",
               }}
             >
               <Typography sx={style.Name}> AGREEMENT</Typography>
@@ -120,11 +123,12 @@ export default function Loans() {
             <Paper
               variant="elevation"
               sx={{
-                padding: "15px",
+                padding: "25px",
                 backgroundColor: "rgba(255, 255, 255, 0.8)",
                 textAlign: "center",
                 alignItems: "center",
                 justifyContent: "center",
+                borderRadius: "20px",
               }}
             >
               <Paper
@@ -179,7 +183,7 @@ export default function Loans() {
                       sx={{ marginTop: "12px" }}
                     />
                   </Grid>
-                  <Grid item xs={5}>
+                  <Grid item xs={4}>
                     <TextField
                       label="Email"
                       placeholder="Email"
